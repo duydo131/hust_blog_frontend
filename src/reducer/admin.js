@@ -1,12 +1,10 @@
 import * as Types from '../constants/ActionType';
-var isAdmin = JSON.parse(localStorage.getItem('admin'));
+var isAdmin = localStorage.getItem('user') === 'admin';
 var initialState = isAdmin;
 
 const admin = (state = initialState, action) => {
     switch (action.type) {
         case Types.LOGOUT:
-            localStorage.removeItem('token');
-            localStorage.setItem('admin', JSON.stringify(false));
             return false
         case Types.LOGIN_ADMIN:
             return true

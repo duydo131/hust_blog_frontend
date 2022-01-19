@@ -1,9 +1,0 @@
-App     
-    Header
-    Products
-        Product
-    Message
-    Cart
-        CartItem
-        CartResult
-    Footer

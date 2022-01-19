@@ -3,7 +3,7 @@ import MainContent from "./MainContent";
 
 function Content(){
     return (
-        <div id="content">
+        <div id="content" style={{display: 'inline-block'}}>
             <SocialNetwork/>
             <MainContent />
         </div>

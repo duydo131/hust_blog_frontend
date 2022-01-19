@@ -1,4 +1,35 @@
+import callApiHttp from "./callApiHttp"
+import React, { useState, useEffect } from 'react'
+
+
 function News() {
+  const [newInfo, setNewInfo] = useState([])
+
+  const fetchUserInfo = async () =>  {
+    try {
+      const res = await callApiHttp({
+        url: `/posts/all/home`,
+        method: 'GET',
+        params: {
+          size: 3
+        }
+      })
+
+      if(res.status === 200){
+        const { data } = res
+        setNewInfo(data.content.content)
+
+      }
+
+    } catch (error) {
+      console.log(`error: ${  error}`)
+    }
+  }
+
+  useEffect(() => {
+    fetchUserInfo()
+  }, [])
+
   return (
     <div className="center-on-meidum-only" style={{ marginTop: '100px' }}>
       <div className="container-fluid">
@@ -19,10 +50,20 @@ function News() {
                     <div className="portlet-body">
                       <div className="news-wrapper ">
                         <div className="hust-tintuc ">
+
                           <div className="news-mt-Ex even first">
-                            <div className="news-3tin-title"> <a href="https://www.hust.edu.vn/tin-tuc/-/asset_publisher/AKFI5qRls1e8/content/bach-khoa-ha-noi-hoi-nhap-e-phat-trien-ben-vung-trong-co-khi-va-nang-luong" title="Bách khoa Hà Nội hội nhập để phát triển bền vững trong cơ khí và..."> <img src="./hust_files/article" alt="" /> </a> </div>
-                            <p> <a href="https://www.hust.edu.vn/tin-tuc/-/asset_publisher/AKFI5qRls1e8/content/bach-khoa-ha-noi-hoi-nhap-e-phat-trien-ben-vung-trong-co-khi-va-nang-luong" title="Bách khoa Hà Nội hội nhập để phát triển bền vững trong cơ khí và..."> Bách khoa Hà Nội hội nhập để phát triển bền vững trong cơ khí và... <i className=""></i> </a> </p>
+                            <div className="news-3tin-title">
+                              <a title={newInfo[0]?.shortDescription}>
+                                <img src={newInfo[0]?.image} alt={newInfo[0]?.shortDescription} />
+                              </a>
+                            </div>
+                            <p>
+                              <a title={newInfo[0]?.shortDescription}> {newInfo[0]?.shortDescription}
+                                <i className=""></i>
+                              </a>
+                            </p>
                           </div>
+
                           <div className="news-mt-Ex odd">
                             <div className="news-3tin-title"> <a href="https://www.hust.edu.vn/tin-tuc/-/asset_publisher/AKFI5qRls1e8/content/bach-khoa-ha-noi-cong-bo-nhung-iem-moi-trong-ky-thi-anh-gia-tu-duy-nam-2022" title="Bách khoa Hà Nội công bố những điểm mới trong kỳ thi đánh giá tư..."> <img src="./hust_files/article(1)" alt="" /> </a> </div>
                             <p> <a href="https://www.hust.edu.vn/tin-tuc/-/asset_publisher/AKFI5qRls1e8/content/bach-khoa-ha-noi-cong-bo-nhung-iem-moi-trong-ky-thi-anh-gia-tu-duy-nam-2022" title="Bách khoa Hà Nội công bố những điểm mới trong kỳ thi đánh giá tư..."> Bách khoa Hà Nội công bố những điểm mới trong kỳ thi đánh giá tư... <i className=""></i> </a> </p>

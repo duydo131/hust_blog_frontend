@@ -1,0 +1,87 @@
+
+.tintuc60-news {
+    float: left;
+    width: 100%;
+    display: block;
+    border-right: 1px solid #e5e5e5;
+}
+
+.tintuc60-news .news-block {
+    float: left;
+    width: 95%;
+    border-bottom: 1px solid #e5e5e5;
+    padding-bottom: 20px;
+    min-height: 220px;
+}
+
+.tintuc60-news .news-block .left-img {
+    width: 165px;
+    height: 115px;
+    margin-top: 25px;
+    position: relative;
+    overflow: hidden;
+    float: left;
+}
+
+.tintuc60-news .news-block .left-img img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 100%;
+    width: auto;
+    max-height: 100%;
+    max-width: none;
+    transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -o-transform: translateX(-50%) translateY(-50%);
+    -ms-transform: translateX(-50%) translateY(-50%);
+}
+
+.tintuc60-news .news-block .content {
+    padding-top: 20px;
+    padding-left: 190px;
+}
+
+.tintuc60-news .news-block .content .news-title {
+    color: #b80f14;
+    font-size: 20px;
+}
+
+.tintuc60-news .news-block .content .news-date {
+    color: #898989;
+    font-size: 15px;
+    font-style: italic;
+    padding: 10px 0;
+}
+
+.pages {
+    float: left;
+    display: block;
+    border: none;
+    width: 100%;
+    background: #fbfbf9;
+}
+
+.pages .currentpage,
+.pages a:hover {
+    background: #f1f1e9;
+    color: #9f1513;
+}
+
+.pages a,
+.pages .currentpage {
+    padding: 10px 15px;
+    font-size: 14px;
+    margin: 0;
+    display: inline-block;
+}
+
+.tintuc60-news .icon-detail {
+    color: #9c1010 !important;
+    font-style: italic !important;
+}
+
+.new-left {
+    margin-left: 3%;
+}

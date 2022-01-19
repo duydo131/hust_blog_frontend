@@ -141,3 +141,15 @@
 a {
     color: #333;
 }
+.journal-content-article figure img {
+    height: 442px;
+    width: 660px
+}
+
+.rdw-image-imagewrapper{
+    margin-left: 10%;
+}
+
+.rdw-image-modal{
+    left: -75px!important
+}

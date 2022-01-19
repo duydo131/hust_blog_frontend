@@ -1,61 +1,79 @@
 import * as Types from './../constants/ActionType';
 
-export const actAddToCart = (product, quantity) => {
-    return {
-        type: Types.ADD_TO_CART,
-        product,
-        quantity
-    }
-}
-
-export const actChangeMessage = (message) => {
-    return {
-        type: Types.CHANGE_MESSAGE,
-        message
-    }
-}
-
-export const actDeleteProductInCart = (product) => {
-    return {
-        type: Types.DELETE_PRODUCT_IN_CART,
-        product
-    }
-}
-
-export const actDeleteAllInCart = () => {
-    return {
-        type: Types.DELETE_ALL_IN_CART,
-    }
-}
-
-export const actUpdateProductInCart = (product, quantity) => {
-    return {
-        type: Types.UPDATE_PRODUCT_IN_CART,
-        product,
-        quantity
-    }
-}
-
-export const actFetchProduct = (products) => {
-    return {
-        type: Types.FETCH_PRODUCT,
-        products
-    }
-}
-
-export const actLogin = (isAd) => {
-    if (isAd) {
-        return {
-            type: Types.LOGIN_ADMIN,
-        }
-    }
+export const actLogin = () => {
     return {
         type: Types.LOGIN,
+    }
+}
+
+export const actLoginAdmin = () => {
+    return {
+        type: Types.LOGIN_ADMIN,
     }
 }
 
 export const actLogout = () => {
     return {
         type: Types.LOGOUT,
+    }
+}
+
+export const actEnableToast = (message) => {
+    return {
+        type: Types.ENABLE_TOAST,
+        message: message,
+    }
+}
+
+export const actDisableToast = () => {
+    return {
+        type: Types.DISABLE_TOAST,
+    }
+}
+
+export const actChangePost = (id) => {
+    return {
+        type: Types.CHANGE_POST,
+        id,
+    }
+}
+
+export const actChangeSlug = (title, name) => {
+    return {
+        type: Types.CHANGE_SLUG,
+        title,
+        name,
+    }
+}
+
+export const actChangeSlugParent = (title, name) => {
+    return {
+        type: Types.CHANGE_SLUG_PARENT,
+        title,
+        name,
+    }
+}
+
+export const actEnableManager = () => {
+    return {
+        type: Types.ENABLE_MANAGER,
+    }
+}
+
+export const actDisableManager = () => {
+    return {
+        type: Types.DISABLE_MANAGER,
+    }
+}
+
+export const actUserStatistic = () => {
+    return {
+        type: Types.USER_STATISTIC,
+    }
+}
+
+export const actCategoryStatistic = () => {
+    return {
+        type: Types.CATEGORY_STATISTIC,
     }
 }
